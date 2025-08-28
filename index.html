@@ -1,0 +1,154 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="default">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Filmes em Alta na Netflix — Acesso para Todos</title>
+  <meta name="description" content="Catálogo acessível com capa e sinopse de filmes em alta na Netflix. Controles de acessibilidade: contraste, tamanho do texto e temas.">
+  <link rel="preload" href="styles.css" as="style">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Link de pular para conteúdo -->
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo principal</a>
+
+  <!-- Barra de Acessibilidade fixa -->
+  <div class="a11y-toolbar" role="toolbar" aria-label="Ferramentas de acessibilidade">
+    <button id="btn-font-down" aria-label="Diminuir tamanho do texto" title="Diminuir texto" aria-keyshortcuts="Alt+," class="btn-ico" data-action="font-down">
+      <!-- ícone A- -->
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h2l1.5-4h7L16 20h2L13 4h-2L4 20zm4.8-6L11 7l2.2 7H8.8zM20 12h-6v2h6v-2z"/></svg>
+    </button>
+    <button id="btn-font-up" aria-label="Aumentar tamanho do texto" title="Aumentar texto" aria-keyshortcuts="Alt+." class="btn-ico" data-action="font-up">
+      <!-- ícone A+ -->
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h2l1.5-4h7L16 20h2L13 4h-2L4 20zm4.8-6L11 7l2.2 7H8.8zM20 11h-2V9h-2v2h-2v2h2v2h2v-2h2v-2z"/></svg>
+    </button>
+    <button id="btn-theme" aria-label="Alternar tema claro/escuro" title="Tema claro/escuro" class="btn-ico" role="switch" aria-checked="false" data-action="toggle-theme">
+      <!-- ícone sol/lua -->
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.76 4.84l-1.8-1.79L3.17 4.84l1.79 1.79 1.8-1.79zM1 13h3v-2H1v2zm10 10h2v-3h-2v3zm9.84-3.16l-1.79-1.79-1.8 1.79 1.8 1.79 1.79-1.79zM20 11h3v2h-3v-2zM17.24 4.84l1.79-1.79 1.8 1.79-1.8 1.79-1.79-1.79zM12 6a6 6 0 100 12 6 6 0 000-12z"/></svg>
+    </button>
+    <button id="btn-contrast" aria-label="Alto contraste" title="Alto contraste" class="btn-ico" role="switch" aria-checked="false" data-action="toggle-contrast">
+      <!-- ícone contraste -->
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 100 20V2z"/></svg>
+    </button>
+    <button id="btn-underline" aria-label="Sublinhar links" title="Sublinhar links" class="btn-ico" role="switch" aria-checked="false" data-action="toggle-underline">
+      <!-- ícone sublinhado -->
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17a5 5 0 005-5V4h-2v8a3 3 0 11-6 0V4H7v8a5 5 0 005 5zM5 20h14v-2H5v2z"/></svg>
+    </button>
+    <button id="btn-motion" aria-label="Reduzir animações" title="Reduzir animações" class="btn-ico" role="switch" aria-checked="false" data-action="toggle-motion">
+      <!-- ícone movimento -->
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12h3a7 7 0 007 7v3c-5.52 0-10-4.48-10-10zM12 2v3a7 7 0 017 7h3c0-5.52-4.48-10-10-10z"/></svg>
+    </button>
+  </div>
+
+  <header class="header" role="banner">
+    <div class="brand">
+      <span class="logo" aria-hidden="true">N</span>
+      <h1>Filmes em Alta — Netflix</h1>
+    </div>
+    <p class="subtitle">Capa e sinopse com acessibilidade — personalize o visual, o contraste e o tamanho do texto.</p>
+  </header>
+
+  <main id="conteudo" class="container" role="main">
+    <section class="grid" aria-label="Lista de filmes em alta">
+      <!-- Cards de filmes inseridos pelo script -->
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Projeto didático. Substitua capas e textos pelos filmes reais conforme o README.</p>
+  </footer>
+
+  <script>window.__MOVIES__ = [
+  {
+    "id": "atlas",
+    "title": "Atlas",
+    "tag": "Ficção Científica",
+    "synopsis": "Uma analista de dados precisa pilotar um mecha para impedir uma IA rebelde que ameaça a Terra.",
+    "bg": [
+      220,
+      30,
+      50
+    ]
+  },
+  {
+    "id": "ultrassecreto",
+    "title": "Ultra Secreto",
+    "tag": "Ação",
+    "synopsis": "Agentes improváveis se unem para recuperar um artefato e acabam descobrindo uma conspiração global.",
+    "bg": [
+      20,
+      90,
+      200
+    ]
+  },
+  {
+    "id": "comedia_romantica",
+    "title": "Comédia Romântica",
+    "tag": "Comédia",
+    "synopsis": "Dois rivais são forçados a trabalhar juntos e descobrem que o amor pode surgir nos lugares menos prováveis.",
+    "bg": [
+      250,
+      165,
+      30
+    ]
+  },
+  {
+    "id": "noite_sombria",
+    "title": "Noite Sombria",
+    "tag": "Terror",
+    "synopsis": "Um grupo de amigos se perde em uma estrada deserta e precisa enfrentar seus próprios medos para sobreviver.",
+    "bg": [
+      40,
+      40,
+      40
+    ]
+  },
+  {
+    "id": "doc_oceano",
+    "title": "O Coração do Oceano",
+    "tag": "Documentário",
+    "synopsis": "Uma expedição revela criaturas fascinantes e desafios ambientais nas profundezas do mar.",
+    "bg": [
+      0,
+      120,
+      140
+    ]
+  },
+  {
+    "id": "corrida_final",
+    "title": "Corrida Final",
+    "tag": "Esporte/Drama",
+    "synopsis": "Um corredor veterano tenta uma última chance no campeonato enquanto equilibra família e carreira.",
+    "bg": [
+      180,
+      30,
+      150
+    ]
+  },
+  {
+    "id": "mistério_cidade",
+    "title": "Mistério na Cidade",
+    "tag": "Suspense",
+    "synopsis": "Uma jornalista investiga desaparecimentos que apontam para um segredo escondido sob a metrópole.",
+    "bg": [
+      10,
+      120,
+      60
+    ]
+  },
+  {
+    "id": "mundo_animado",
+    "title": "Mundo Animado",
+    "tag": "Animação/Família",
+    "synopsis": "Dois irmãos entram em um livro mágico e precisam resolver quebra‑cabeças para voltar para casa.",
+    "bg": [
+      120,
+      80,
+      220
+    ]
+  }
+];</script>
+  <script src="script.js" defer></script>
+</body>
+</html>
